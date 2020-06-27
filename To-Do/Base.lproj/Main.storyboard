@@ -16,7 +16,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <color key="sectionIndexColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cell" id="S1k-Ej-y01">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" id="S1k-Ej-y01">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="S1k-Ej-y01" id="LKA-Kb-5E2">
@@ -31,7 +31,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todo for You" id="r8n-Wg-Fjh">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KS4-CN-HZQ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="KS4-CN-HZQ">
+                            <connections>
+                                <action selector="addTask:" destination="xaj-OA-SdX" id="O9F-eV-l7z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XFJ-or-cL6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
