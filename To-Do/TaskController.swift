@@ -10,21 +10,36 @@ import UIKit
 
 class TaskController: UITableViewController {
     override func viewDidLoad() {
-        viewBackground()
         createSearchBar()
-    }
+        navigationItem.title = "Todo for " + findTodayDate()
 
-    func viewBackground() {
-        let gradient = CAGradientLayer()
-        navigationController?.navigationBar.barTintColor = .white
-        gradient.colors = [#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1).cgColor, #colorLiteral(red: 0.8431372549, green: 0.8823529412, blue: 0.9254901961, alpha: 1).cgColor]
-        gradient.startPoint = CGPoint(x: 0.7, y: 0.2)
-        gradient.endPoint = CGPoint(x: 1, y: 0.9)
-        view.layer.addSublayer(gradient)
-        gradient.frame = view.frame
+        
     }
 
     func createSearchBar() {
         navigationItem.searchController = UISearchController(searchResultsController: nil)
+    }
+
+    func findTodayDate() -> String {
+        let currentDateTime = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        formatter.dateFormat = "dd/MM"
+        return formatter.string(from: currentDateTime)
+    }
+}
+
+//    MARK: - Data Source
+
+
+extension TaskController {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "ToDo"
+        return cell
     }
 }
