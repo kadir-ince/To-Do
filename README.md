@@ -29,3 +29,11 @@ If you want to open it on your Mac, open Terminal and write respectively below c
 git clone --> Cloning the project on your Mac from GitHub <br>
 cd To-Do --> Change current directory to the project directory <br>
 xed . --> Open the project in Xcode <br>
+
+
+## What Features Will Be Added To The App
+
+- [x] Add swipe gesture codes for done and delete actions
+- [ ] Add UserDefaults for added tasks (for notes storage on iPhone)
+- [ ] Add search action in notes
+- [ ] Integrate the Firebase for notes
